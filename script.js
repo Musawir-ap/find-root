@@ -22,12 +22,13 @@ async function callApi(username){
      followers.map(user=>{
          const list = makeList(user.login,user.avatar_url)
          root.innerHTML +=list 
+         
      })
 }
 
 window.addEventListener('hashchange',()=>{
     const username = location.hash.split("#")[1]
-  
+  root.innerHTML = " "
     callApi(username)
 })
 
